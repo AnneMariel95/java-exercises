@@ -18,6 +18,8 @@ public class GradeCalculator {
         int score;
         int total = 0;
         double average = 0;
+        String gradeMessage = null;
+        String templateMessage = "Your grade is";
 
         for (int i = 0; i < numberOfScores; i++) {
             System.out.println("Enter score test #" + (i + 1));
@@ -29,27 +31,27 @@ public class GradeCalculator {
             } else {
                 total += score;
             }
-
         }
 
 //        System.out.println("The sum is " + total);
         System.out.println("The average is " + (average = total / numberOfScores));
 
         if (average >= 99) {
-            System.out.println("Awesome! Your grade is A+");
+            gradeMessage = "Awesome! " + templateMessage + " A+";
         } else if (average >= 90 && average <= 98) {
-            System.out.println("Your grade is A");
+            gradeMessage = templateMessage + " A";
         } else if (average >= 84 && average <= 89) {
-            System.out.println("Your grade is B");
+            gradeMessage = templateMessage + " B";
         } else if (average >= 81 && average <= 83) {
-            System.out.println("Your grade is C");
+            gradeMessage = templateMessage + " C";
         } else if (average >= 78 && average <= 80) {
-            System.out.println("Your grade is D");
+            gradeMessage = templateMessage + " D";
         } else if (average >= 75 && average <= 77) {
-            System.out.println("Your grade is E");
-        } else if (average <= 74) {
-            System.out.println("You fail! Your grade is F");
-        }
+            gradeMessage = templateMessage + " E";
+        } else
+            gradeMessage = "You fail! " + templateMessage + " F";
+
+        System.out.println(gradeMessage);
 
         scanner.close();
 
