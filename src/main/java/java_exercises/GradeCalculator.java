@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class GradeCalculator {
     public static void main(String[] args) {
+        GradeCalculator calculator = new GradeCalculator();
 
+        calculator.getScoresAndCalculate();
+    }
+
+    public void getScoresAndCalculate() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter number of scores:");
@@ -18,8 +23,6 @@ public class GradeCalculator {
         int score;
         int total = 0;
         double average = 0;
-        String gradeMessage = null;
-        String templateMessage = "Your grade is";
 
         for (int i = 0; i < numberOfScores; i++) {
             System.out.println("Enter score test #" + (i + 1));
@@ -33,8 +36,19 @@ public class GradeCalculator {
             }
         }
 
-//        System.out.println("The sum is " + total);
-        System.out.println("The average is " + (average = total / numberOfScores));
+        average = total / numberOfScores;
+        System.out.println("The average is " + average);
+
+        String gradeMessage = this.generateGradeMessage(average);
+
+        System.out.println(gradeMessage);
+
+        scanner.close();
+    }
+
+    private String generateGradeMessage(double average) {
+        String templateMessage = "Your grade is";
+        String gradeMessage = null;
 
         if (average >= 99) {
             gradeMessage = "Awesome! " + templateMessage + " A+";
@@ -51,9 +65,6 @@ public class GradeCalculator {
         } else
             gradeMessage = "You fail! " + templateMessage + " F";
 
-        System.out.println(gradeMessage);
-
-        scanner.close();
-
+        return gradeMessage;
     }
 }
