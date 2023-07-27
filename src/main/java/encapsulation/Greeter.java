@@ -32,24 +32,23 @@ public class Greeter {
         return createGreeting(this.language) + ", " + name;
     }
 
-    String greet(String name, String language) {
-        return createGreeting(language) + ", " + name;
+    String greet(String name, String _language) {
+        return createGreeting(_language) + ", " + name;
     }
 
-    String greet(String name, String language, boolean isEnergetic) {
+    String greet(String name, String _language, boolean isEnergetic) {
         if (isEnergetic == true) {
-            return createGreeting(language) + ", " + name + "!!!";
+            return greet(name, _language) + "!!!";
         } else {
-            return createGreeting(language) + ", " + name;
+            // Referenced String greet(String name, String _language)
+            return greet(name, _language);
         }
     }
 
     String greet(String name, boolean isEnergetic) {
-        if (isEnergetic == true) {
-            return createGreeting(language) + ", " + name + "!!!";
-        } else {
-            return createGreeting(language) + ", " + name;
-        }
+        // Referenced String greet(String name, String _language, boolean isEnergetic).
+        // Reused global variable language to match parameter requirement.
+        return greet(name, this.language, isEnergetic);
     }
 }
 
