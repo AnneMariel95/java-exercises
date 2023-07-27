@@ -10,5 +10,11 @@ public class MainApplication {
         System.out.println(multiLingualPerson.greet("John", "Spanish", true));
         System.out.println(multiLingualPerson.greet("John", "Spanish", false));
         System.out.println(multiLingualPerson.greet("John", true));
+
+        Greeter spanishSpeaker = new Greeter("Spanish");
+        System.out.println(spanishSpeaker.greet());
+        System.out.println(spanishSpeaker.greet("John"));
+        System.out.println(spanishSpeaker.greet("John", true));
+
     }
 }
