@@ -32,13 +32,17 @@ public class FilterColor {
         // Create a new arrayList of Strings called filteredColors.
         ArrayList<String> filteredColors = new ArrayList<>();
 
-        for (int i = 0; i < colors.size(); i++) {
-            // Add the element based on colorOfChoice to filteredColors.
-
-            if (colors.get(i).contains(colorOfChoice)) {
-                filteredColors.add(colors.get(i));
-            }
+        for (String element : colors) {
+            if (element.contains(colorOfChoice))
+                filteredColors.add(element);
         }
+
+//        for (int i = 0; i < colors.size(); i++) {
+//            // Add the element based on colorOfChoice to filteredColors.
+//            if (colors.get(i).contains(colorOfChoice)) {
+//                filteredColors.add(colors.get(i));
+//            }
+//        }
 
         // Print all the colors inside the filteredColors arrayList.
         for (int i = 0; i < filteredColors.size(); i++) {
