@@ -6,6 +6,12 @@ public class PersonWithEncapsulation {
     private String lastName;
     private String gender;
 
+    public PersonWithEncapsulation(String first_name, String last_name, String gender_) {
+        this.firstName = first_name;
+        this.lastName = last_name;
+        this.gender = gender_;
+    }
+
     public String getFirstName() {
         return this.firstName;
     }
@@ -32,12 +38,6 @@ public class PersonWithEncapsulation {
 
     public String getGender() {
         return this.gender;
-    }
-
-    public PersonWithEncapsulation(String first_name, String last_name, String gender_) {
-        this.firstName = first_name;
-        this.lastName = last_name;
-        this.gender = gender_;
     }
 
     public static void main(String[] args) {
