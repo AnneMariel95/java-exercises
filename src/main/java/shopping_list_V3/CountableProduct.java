@@ -24,6 +24,6 @@ public class CountableProduct extends Product{
 
     @Override
     public String toString(){
-        return getName() + quantity + getPrice() + "Total Price: " + getAmount();
+        return "Name: " + this.getName() + ", Quantity: " + getQuantity() + ", Price " + getPrice() + ", Total Price: " + this.getPrice();
     }
 }
