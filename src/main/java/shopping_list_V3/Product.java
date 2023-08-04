@@ -2,32 +2,20 @@ package shopping_list_V3;
 
 public abstract class Product {
 
-    private String name;
-    private double price;
+    protected String name;
+    protected double price;
 
-    public Product(String _name, Double _price) {
+    protected String id;
+
+    public Product(String _id, String _name, Double _price) {
+        this.id = _id;
         this.name = _name;
         this.price = _price;
     }
 
-    public String getName() {
-        return name;
-    }
+    public abstract double getAmount();
 
-    public void setName(String name) {
-        this.name = name;
+    public String getId() {
+        return id;
     }
-
-    public double getPrice() {
-        return this.price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double getAmount() {
-        return this.price;
-    }
-
 }

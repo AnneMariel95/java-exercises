@@ -11,7 +11,19 @@ public class ShoppingList {
     }
 
     public void addItem(Product productToAdd) {
-        this.myList.add(productToAdd);
+        int indexOfProductToUpdate = -1;
+        for (int i = 0; i < myList.size(); i++) {
+            if (productToAdd.getId() == myList.get(i).getId()) {
+                indexOfProductToUpdate = i;
+                break;
+            }
+        }
+        if (indexOfProductToUpdate == -1) {
+            myList.add(productToAdd);
+        } else {
+            myList.set(indexOfProductToUpdate, productToAdd);
+            System.out.println("The product is already existing. Updating");
+        }
     }
 
     public String printReceipt() {

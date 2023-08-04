@@ -4,8 +4,8 @@ public class WeightedProduct extends Product {
 
     private double weight;
 
-    public WeightedProduct(String _name, double _weight, double _price) {
-        super(_name, _price);
+    public WeightedProduct(String _id, String _name, double _weight, double _price) {
+        super(_id, _name, _price);
         this.weight = _weight;
     };
 
@@ -19,12 +19,12 @@ public class WeightedProduct extends Product {
 
     @Override
     public double getAmount(){
-        return this.weight * this.getPrice();
+        return this.weight * this.price;
     };
 
     @Override
     public String toString() {
-        return "Name: " + this.getName() + ", Price/kg: " + this.getPrice() + ", Total Weight: " + this.weight + ", Total Price: " + this.getAmount();
+        return "Name: " + this.name + ", Price/kg: " + this.price + ", Total Weight: " + this.weight + ", Total Price: " + this.getAmount();
     }
 
 }

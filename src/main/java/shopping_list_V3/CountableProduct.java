@@ -4,8 +4,8 @@ public class CountableProduct extends Product{
 
     private double quantity;
 
-    CountableProduct(String _name, int _quantity, double _price){
-        super(_name, _price);
+    CountableProduct(String _id, String _name, int _quantity, double _price){
+        super(_id, _name, _price);
         this.quantity = _quantity;
     };
 
@@ -19,11 +19,11 @@ public class CountableProduct extends Product{
 
     @Override
     public double getAmount(){
-        return quantity * getPrice();
+        return quantity * this.price;
     }
 
     @Override
     public String toString(){
-        return "Name: " + this.getName() + ", Quantity: " + getQuantity() + ", Price " + getPrice() + ", Total Price: " + this.getPrice();
+        return "Name: " + this.name + ", Quantity: " + getQuantity() + ", Price " + this.price + ", Total Price: " + this.price;
     }
 }
