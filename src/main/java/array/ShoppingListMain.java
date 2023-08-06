@@ -1,6 +1,8 @@
 package array;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ShoppingListMain {
 
@@ -16,7 +18,7 @@ public class ShoppingListMain {
         food.removeItem("Soap");
         System.out.println(food.getPrintableList());
 
-        ArrayList<String> initialDailyItems = new ArrayList<>();
+        Set<String> initialDailyItems = new HashSet<String>();
         initialDailyItems.add("Soap");
         initialDailyItems.add("Tissue");
         initialDailyItems.add("Comb");

@@ -1,24 +1,28 @@
 package array;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class ShoppingList {
-
-    private ArrayList<String> myShoppingList = new ArrayList<>();
+    private Set<String> myShoppingList;
 
     public ShoppingList() {
-        this.myShoppingList = new ArrayList<>();
+        this.myShoppingList = new HashSet<>();
     }
 
-    public ShoppingList(ArrayList<String> defaultList) {
+    public ShoppingList(Set<String> defaultList) {
         this.myShoppingList = defaultList;
     }
 
     public String getPrintableList() {
         String returnValue = "";
-        for (int i = 0; i < myShoppingList.size(); i++) {
-            returnValue = returnValue + myShoppingList.get(i);
-            if (i != myShoppingList.size() - 1) {
+        Iterator<String> myShoppingListIterator = myShoppingList.iterator();
+        while (myShoppingListIterator.hasNext()) {
+            returnValue = returnValue + myShoppingListIterator.next();
+
+            if (myShoppingListIterator.hasNext()) {
                 returnValue = returnValue + ", ";
             }
         }
