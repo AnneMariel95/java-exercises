@@ -1,35 +1,27 @@
 package shopping_list_V3;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ShoppingList {
 
-    private ArrayList<Product> myList;
+    private Map<String, Product> myMap;
 
     public ShoppingList() {
-        this.myList = new ArrayList<>();
+        this.myMap = new HashMap<>();
     }
 
     public void addItem(Product productToAdd) {
-        int indexOfProductToUpdate = -1;
-        for (int i = 0; i < myList.size(); i++) {
-            if (productToAdd.getId() == myList.get(i).getId()) {
-                indexOfProductToUpdate = i;
-                break;
-            }
-        }
-        if (indexOfProductToUpdate == -1) {
-            myList.add(productToAdd);
-        } else {
-            myList.set(indexOfProductToUpdate, productToAdd);
+        if (myMap.containsKey(productToAdd.id)) {
             System.out.println("The product is already existing. Updating");
         }
+        myMap.put(productToAdd.id, productToAdd);
     }
 
     public String printReceipt() {
         String receiptMessage = "";
-        for (int i = 0; i < myList.size(); i++) {
-            receiptMessage = receiptMessage + myList.get(i).toString() + "\n";
+        for (Map.Entry<String, Product> entry : myMap.entrySet()) {
+            receiptMessage = receiptMessage + entry.getValue() + "\n";
         }
         return receiptMessage;
     }
